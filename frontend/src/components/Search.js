@@ -9,10 +9,9 @@ const Search = () => {
   const itemsPerPage = 10;
   const [error, setError] = useState(null);
 
-
   const handleSearch = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/api/search', { query });
+      const response = await axios.post('https://questionquery.onrender.com/api/search', { query });
 
       if (response.data && response.data.questions) {
         setResults(response.data.questions);
@@ -28,7 +27,6 @@ const Search = () => {
     }
   };
 
-
   const nextSlide = () => {
     if (currentIndex + itemsPerPage < results.length) {
       setCurrentIndex(currentIndex + itemsPerPage);
@@ -42,7 +40,12 @@ const Search = () => {
   };
 
   return (
+
     <div className="search-container">
+
+
+
+
       <input
         type="text"
         value={query}
@@ -53,13 +56,11 @@ const Search = () => {
 
       {error && <p style={{ color: 'red' }}>{error}</p>}
 
-
       {results.length > 0 && (
         <div className="carousel-container">
           <div className="carousel">
             <ol>
               {results.slice(currentIndex, currentIndex + itemsPerPage).map((question, index) => {
-
                 const globalIndex = currentIndex + index + 1;
                 return (
                   <li className="carousel-item" key={globalIndex}>
@@ -69,7 +70,6 @@ const Search = () => {
               })}
             </ol>
           </div>
-
 
           <div className="carousel-controls">
             <button onClick={prevSlide} disabled={currentIndex === 0}>
@@ -85,6 +85,9 @@ const Search = () => {
         </div>
       )}
     </div>
+
+
+
   );
 };
 
