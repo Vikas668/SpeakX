@@ -31,6 +31,27 @@ You can view the live version of the application [here](https://speakxvikasassig
 - **React Scripts**: Scripts for running and building React applications.
 - **web-vitals**: Library for measuring performance metrics.
 
+## Backend Setup
+
+1. **Clone the Repository**:
+   ```bash
+   git clone <this-repository-link>
+   cd repository/backend
+
+2. Install dependencies mentioned in Backend Section
+   npm install
+   npm install followed by dependencies name
+   run the server with 'node server.js'
+   The backend should now be running on http://localhost:5000
+
+## Frontend Setup
+  npm install
+  install all the dependencies from the padkage.json
+  start the server with command 'npm run dev'
+  The frontend should now be running on 'http://localhost:3000'
+  Find the question by typing the query in search box and click the button.
+  
+## YOU HAVE COMPLETED THE SETUP NOW !!!!
 
 
 
